@@ -15,8 +15,30 @@
     */
 
     //ENTRADA
+    const alimentos = ['tomate', 'batata', 'batata-doce', 'alface', 'cebola', 'cebolinha', 'beterraba'];
+    let faturamentos = 0;
 
-    
+    for (const verificador of alimentos) {
+        const itensVendidos = Number(prompt(`Informe quanto itens de ${verificador} foram vendidos.`));
+
+        if (verificador === "tomate") {
+            faturamentos += itensVendidos * 3.9;
+        } else if (verificador === "batata") {
+            faturamentos += itensVendidos * 3.4;
+        } else if (verificador === "batata-doce") {
+            faturamentos += itensVendidos * 4.7
+        } else if (verificador === "alface") {
+            faturamentos += itensVendidos * 1.5;
+        } else if (verificador === "cebola") {
+            faturamentos += itensVendidos * 2.9;
+        } else if (verificador === "cebolinha") {
+            faturamentos += itensVendidos * 1.4;
+        } else {
+            faturamentos += itensVendidos * 4.1;
+        }
+    }
+
+    document.write(`Seu faturamento foi de: R$${faturamentos.toFixed(2).replace("." , ",")}`);
     //PROCESSAMENTO
     
     

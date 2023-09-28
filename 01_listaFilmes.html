@@ -9,12 +9,33 @@
     */
 
     //ENTRADA
+    const qtdFilmes = Number(prompt(`Quantos filmes você deseja cadastrar?`));
+    const comedia = [];
+    const drama = [];
+    const romance = [];
 
-    
-    //PROCESSAMENTO
-    
-    
-    //SAÍDA
-    
+    for (let c = 0; c < qtdFilmes; c++) {
+        const filme = prompt(`Qual filme você quer inserir?`);
+        const genero = Number(prompt(`Informe o gênero desse filme: 1 - Comédia; 2 - Drama; 3 - Romance`))
+        if (genero === 1) {
+            comedia.push(filme);
+        } else if (genero === 2) {
+            drama.push(filme);
+        } else {
+            romance.push(filme);
+        }
+    }
+
+    if (comedia.length > 0) {
+        document.write(`<p>Comédia: ${comedia.join(", ")}</p>`);
+    }
+
+    if (drama.length > 0) {
+        document.write(`<p>Drama: ${drama.join(", ")}</p>`);
+    }
+
+    if (romance.length > 0) {
+        document.write(`<p>Romance: ${romance.join(", ")}</p>`);
+    }
     
 </script>
