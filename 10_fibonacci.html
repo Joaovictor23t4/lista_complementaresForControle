@@ -8,7 +8,21 @@
     */
 
     //ENTRADA
+    let fibonacci = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89];
 
+    const qtdNumeros = Number(prompt(`Quantos números você deseja adicionar na sequência fibonacci?`));
+    let extrair;
+
+    for (let c = 0; c < qtdNumeros; c++) {
+        extrair = fibonacci.slice(-2);
+        let soma = 0;
+        for (const somador of extrair) {
+            soma += somador;
+        }
+        fibonacci.push(soma);
+    }
+
+    document.write(`${fibonacci}`);
     
     //PROCESSAMENTO
     

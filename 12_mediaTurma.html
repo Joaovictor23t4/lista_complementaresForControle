@@ -8,8 +8,16 @@
     */
 
     //ENTRADA
+    let notasProgramacaoI = [4, 3, 5, 10, 9, 2, 7, 10, 8, 7, 6, 1, 5, 2, 3];
+    let soma = 0
 
-    
+    for (const num of notasProgramacaoI) {
+        soma += num;
+    }
+
+    notasProgramacaoI.sort((a, b) => a-b);
+
+    document.write(`<p> Maior nota: ${notasProgramacaoI.slice(-1)}</p> <p>Menor nota: ${notasProgramacaoI[0]}</p> <p>Média das notas: ${(soma / notasProgramacaoI.length).toFixed(2).replace("." , ",")}</p>`);
     //PROCESSAMENTO
     
     

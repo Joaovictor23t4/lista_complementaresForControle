@@ -8,12 +8,16 @@
     */
 
     //ENTRADA
+    const qtdPessoas = Number(prompt(`Quantas pessoas irão passar pelo teste de altura?`));
 
-    
-    //PROCESSAMENTO
-    
-    
-    //SAÍDA
-    
+    const medidas = [];
 
+    for (let c = 1; c <= qtdPessoas; c++) {
+        const altura = Number(prompt(`Informe a altura da pessoa ${c}`).replace("," , "."));
+        medidas.push(altura);
+    }
+
+    medidas.sort((a, b) => a-b);
+
+    document.write(`<p> Menor altura: ${medidas[0].toFixed(2).replace("." , ",")}m</p> <p>Maior altura: ${medidas.splice(-1)}m</p>`);
 </script>

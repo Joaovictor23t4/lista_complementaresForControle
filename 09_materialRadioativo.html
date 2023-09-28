@@ -7,12 +7,23 @@
     */
 
     //ENTRADA
+    let massaInicial = Number(prompt(`Informe a massa (em gramas) inicial do material radioativo`).replace("," , "."));
+    const saveMassaIni = massaInicial;
+    let tempo;
 
-    
-    //PROCESSAMENTO
-    
-    
-    //SAÍDA
-    
+    for (tempo = 0; massaInicial >= 1; tempo++) {
+        massaInicial = massaInicial / 2;
+    }
 
+    if (Math.floor(tempo / 60) < 1) {
+        document.write(`A massa inicial foi de: ${saveMassaIni.toFixed(2).replace("." , ",")}g; sua massa final foi de ${massaInicial.toFixed(4).replace("." , ",")} e o tempo necessário foi de ${tempo} minutos`);
+    }
+
+    else if (Math.floor(tempo / 60) === 1) {
+        document.write(`A massa inicial foi de: ${saveMassaIni.toFixed(4).replace("." , ",")}g; sua massa final foi de ${massaInicial.toFixed(4).replace("." , ",")} e o tempo necessário foi de 1 hora e ${tempo % 60} minutos`);
+    }
+
+    else {
+        document.write(`A massa inicial foi de: ${saveMassaIni.toFixed(4).replace("." , ",")}g; sua massa final foi de ${massaInicial.toFixed(4).replace("." , ",")} e o tempo necessário foi de ${Math.floor(tempo / 60)} horas e ${tempo % 60} minutos`);
+    }
 </script>

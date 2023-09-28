@@ -6,8 +6,18 @@
     */
 
     //ENTRADA
+    let somaPar = 0;
+    let somaImpar = 0;
 
+    for (let c = 1; c <= 100; c++) {
+        if (c % 2 === 0) {
+            somaPar += c;
+        } else {
+            somaImpar += c;
+        }
+    }
 
+    document.write(`<p>Somatório pares: ${somaPar}</p> <p>Somatório ímpares: ${somaImpar}`);
     //ENTRADA
 
     
