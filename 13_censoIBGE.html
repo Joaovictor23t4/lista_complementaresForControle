@@ -13,11 +13,23 @@
 
     //ENTRADA
     let salarios = [1200, 2500, 3000, 9000, 850, 4000, 1500, 2300, 3800, 1600];
-    let numeroDeFilhos = [1, 2, 2, 1, 3, 2, 3, 3, 0, 4];    
-    //PROCESSAMENTO
-    
-    
-    //SAÍDA
-    
+    let numeroDeFilhos = [1, 2, 2, 1, 3, 2, 3, 3, 0, 4];
+    let mediaSalario = 0;
+    let mediaFilhos = 0;
+    let percentual3000 = [];
 
+    for (let somador of salarios) {
+        if (somador === 3000) {
+            percentual3000.push(somador);
+        }
+        mediaSalario += somador;
+    }
+
+    for (let somador of numeroDeFilhos) {
+        mediaFilhos += somador;
+    }
+
+    salarios.sort((a, b) => b-a);
+
+    document.write(`Media de salário: R$${(mediaSalario / salarios.length).toFixed(2).replace("." , ",")}; Média do número de filhos: ${Math.floor(mediaFilhos / numeroDeFilhos.length)}; Maior salário: R$${salarios[0].toFixed(2).replace("." , ",")}; Percentual de famílias com até R$3000,00: ${percentual3000.length * 100 / salarios.length}%`);
 </script>

@@ -6,10 +6,21 @@
     Apresente o resultado na tela.
     */
 
-    //ENTRADA
+   //ENTRADA
+   let pergunta = [Number(prompt(`Informe um número inteiro e positivo`))];
+   let resultado = 1;
 
-    
+    if (Number.isInteger(pergunta[0]) === true && Math.sign(pergunta[0]) === 1) {
+        for (let c = 1; c < pergunta[0]; c++) {
+            pergunta.push(pergunta[0] - c);
+        }
+    }
+
+    for (const multiplicador of pergunta) {
+        resultado *= multiplicador;
+    }
     //PROCESSAMENTO
+    document.write(resultado);
     
     
     //SAÍDA

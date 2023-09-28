@@ -7,8 +7,37 @@
     */
 
     //ENTRADA
+    let n = Number(prompt(`Digite um número inteiro e positivo`));
+    let valor = 1;
+    let mensagem = "1 + ";
 
-    
+    if (Number.isInteger(n) === true && Math.sign(n) === 1){
+        for (let c = 2; c <= n; c++) {
+            if (c === n) {
+                mensagem += "1/ " + c;
+                valor += 1/c;
+                break;
+            }
+            mensagem += "1/" + c + "+ ";
+            valor += 1/c;
+        }
+    } else {
+        for (let c = 0; Number.isInteger(n) === false || Math.sign(n) !== 1; c++) {
+            n = Number(prompt(`Digite um número inteiro e positivo`));
+        }
+
+        for (let c = 2; c <= n; c++) {
+            if (c === n) {
+                mensagem += "1/ " + c;
+                valor += 1/c;
+                break;
+            }
+            mensagem += "1/" + c + "+ ";
+            valor += 1/c;
+        }
+    }
+
+    document.write(`${mensagem}; o valor total foi de: ${valor.toFixed(2)}`);
     //PROCESSAMENTO
     
     
