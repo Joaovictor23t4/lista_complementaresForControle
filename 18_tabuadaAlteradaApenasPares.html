@@ -12,7 +12,15 @@
     */
 
     //ENTRADA
-
+    const num = Number(prompt(`Informe o número para fazer a tabuada`));
+    const inicio = Number(prompt(`Informe um número para começar a tabuada de ${num}`));
+    const fim = Number(prompt(`Informe um número para começar a tabuada de ${num}`));
+    
+    for (let c = inicio; c <= fim; c++) {
+        if ((num * c) % 2 === 0) {
+        document.write(`<p>${num} x ${c} = ${num * c}`);
+        }
+    }
     
     //PROCESSAMENTO
     

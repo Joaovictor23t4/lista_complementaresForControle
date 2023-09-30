@@ -13,13 +13,35 @@
     5ª: Acima de 61 anos
     */
 
-    //ENTRADA
+    let faixa1 = 0;
+    let faixa2 = 0;
+    let faixa3 = 0;
+    let faixa4 = 0;
+    let faixa5 = 0;
 
-    
-    //PROCESSAMENTO
-    
-    
-    //SAÍDA
-    
+    for (let c = 1; c <= 10; c++) {
+        let idade = Number(prompt(`Informe a idade do indivíduo ${c}`));
+  
+        if (idade <= 0) {
+            idade =  Number(prompt(`Informe a idade do indivíduo ${c}`));
+        }
 
+        if (idade <= 15) {
+            faixa1++;
+        } else if (idade > 15 && idade <= 30) {
+            faixa2++;
+        } else if (idade > 30 && idade <= 45) {
+            faixa3++;
+        } else if (idade > 45 && idade <= 60) {
+            faixa4++
+        } else {
+            faixa5++
+        }
+    }
+
+    document.write(`<p>Quantidade de pessoas na faixa 1: ${faixa1} isso representa ${faixa1 * 100 / 10}%</p>`);
+    document.write(`<p>Quantidade de pessoas na faixa 2: ${faixa2} isso representa ${faixa2 * 100 / 10}%</p>`);
+    document.write(`<p>Quantidade de pessoas na faixa 3: ${faixa3} isso representa ${faixa3 * 100 / 10}%</p>`);
+    document.write(`<p>Quantidade de pessoas na faixa 4: ${faixa4} isso representa ${faixa4 * 100 / 10}%</p>`);
+    document.write(`<p>Quantidade de pessoas na faixa 5: ${faixa5} isso representa ${faixa5 * 100 / 10}%</p>`);
 </script>

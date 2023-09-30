@@ -11,8 +11,28 @@
     */
 
     //ENTRADA
+    const qtdEspectadores = Number(prompt(`Informe quantos espectadores assistiram o filme`));
+    let regular = [];
+    let bom = [];
+    let media = 0;
+    let mediaRegular = 0;
+    let mediaBom = 0;
 
-    
+    for (let c = 1; c <= qtdEspectadores; c++) {
+        const idade = Number(prompt(`Informe a idade da pessoa ${c}`));
+        const classificacao = prompt(`Informe a classificação do filme que ela deu. R - Regular; B - Bom`).toUpperCase();
+
+        if (classificacao === "R") {
+            regular.push(idade);
+            mediaRegular += idade;
+        } else {
+            bom.push(idade);
+            mediaBom += idade;
+        }
+        media += idade;
+    }
+
+    document.write(`A média de idade das pessoas que responderam regular é de: ${mediaRegular / regular.length}; a média de idade das pessoas que responderam bom é de: ${mediaBom / bom.length}; média das pessoas que viram o filme: ${media / qtdEspectadores}; percentual de pessoas que acharam o filme bom: ${bom.length * 100 / qtdEspectadores}%; a média das pessoas que acharam o filme regular: ${regular.length * 100 / qtdEspectadores}%`);
     //PROCESSAMENTO
     
     

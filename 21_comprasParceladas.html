@@ -11,8 +11,26 @@
     */
 
     //ENTRADA
+    let aVista = [];
+    let parcelado = [];
+    let total = 0;
 
-    
+    for (let c = 1; c <= 10; c++) {
+        const transações = Number(prompt(`Informe o valor da transação ${c}`));
+        let tipoPagamento = prompt(`Informe o tipo de pagamento: V - À Vista; P - Parcelado`);
+
+        if (tipoPagamento === "V") {
+            aVista.push(transações);
+            total += transações;
+        } else if (tipoPagamento === "P") {
+            parcelado.push(transações);
+            total += transações;
+        } else {
+            tipoPagamento = prompt(`Informe o tipo de pagamento: V - À Vista; P - Parcelado`);
+        }
+    }
+
+    document.write(`Total de compras à vista: ${aVista.length}; Total de compras parceladas: ${parcelado.length}; Total das compras efetuadas: R$${total.toFixed(2).replace("." , ",")};`);
     //PROCESSAMENTO
     
     

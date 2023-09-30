@@ -9,7 +9,37 @@
     */
 
     //ENTRADA
+    let mulher = [];
+    let homem = [];
+    let media = 0;
+    let somaHomem = 0;
+    let somaMulher = 0;
 
+    for (let c = 1; c <= 10; c++) {
+        const idade = Number(prompt(`Informe a idade da pessoa ${c}`));
+        let sexo = prompt(`Informe o sexo da pessoa ${c}. H - Homem; M - Mulher`).toUpperCase();
+
+        if (sexo === "H") {
+            homem.push(idade);
+            somaHomem += idade;
+        } else if (sexo === "M") {
+            mulher.push(idade);
+            somaMulher += idade;
+        } else {
+            sexo = prompt(`Erro! Informe o sexo da pessoa ${c} novamente! H - Homem; M - Mulher`).toUpperCase();
+
+            if (sexo === "H") {
+                homem.push(idade);
+                somaHomem += idade;
+            } else if (sexo === "M") {
+                mulher.push(idade);
+                somaMulher += idade;
+            }
+        }
+        media += idade;
+    }
+
+    document.write(`A média das idades é de: ${media / 10}; A média das idades dos homens é de: ${somaHomem / homem.length}; A média das idades das mulheres é de: ${somaMulher / mulher.length}`);
     
     //PROCESSAMENTO
     

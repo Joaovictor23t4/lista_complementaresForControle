@@ -13,12 +13,12 @@
     */
 
     //ENTRADA
-
+    const num = Number(prompt(`Informe o número para fazer a tabuada`));
+    const inicio = Number(prompt(`Informe um número para começar a tabuada de ${num}`));
+    const fim = Number(prompt(`Informe um número para começar a tabuada de ${num}`));
     
-    //PROCESSAMENTO
-    
-    
-    //SAÍDA
-    
+    for (let c = inicio; c <= fim; c++) {
+        document.write(`<p>${num} x ${c} = ${num * c}`);
+    }
 
 </script>
