@@ -9,11 +9,46 @@
     */
 
     //ENTRADA
-
-    
+    let mais50 = [];
+    let menos25 = [];
+    let mediaGeral = 0;
     //PROCESSAMENTO
-    
-    
+
+    for (let c = 1; c <= 10; c++) {
+        const idade = Number(prompt(`Informe a idade da pessoa ${c}`));
+        const peso = Number(prompt(`Informe o peso da pessoa ${c}`));
+
+        if (idade > 50) {
+            mais50.push(peso);
+        } else if (idade < 25) {
+            menos25.push(peso);
+        }
+        mediaGeral += peso;
+    }
+
+    if (mais50.length > 0) {
+        let soma50 = 0;
+        for (let c = 0; c < mais50.length; c++) {
+            soma50 += mais50[c];
+        }
+
+        document.write(`<p>A média do peso das pessoas com mais de 50 anos é: ${(soma50 / mais50.length).toFixed(2).replace("." , ",")}Kg</p>`);
+} else {
+        document.write(`<p>Não foi informado pessoas com idade acima de 50 anos.</p>`);
+    }
+
+    if (menos25.length > 0) {
+        let soma25 = 0;
+        for (let c = 0; c < menos25.length; c++) {
+            soma25 += menos25[c];
+        }
+
+        document.write(`<p>A média do peso das pessoas com menos de 25 anos é: ${(soma25 / menos25.length).toFixed(2).replace("." , ",")}Kg`);
+    } else {
+        document.write(`<p>Não foi informado pessoas com idade abaixo de 25 anos.</p>`);
+    }
+
+    document.write(`<p>A média do peso de todas as pessoas foi de ${(mediaGeral / 10).toFixed(2).replace("." , ",")}Kg`);
     //SAÍDA
     
 

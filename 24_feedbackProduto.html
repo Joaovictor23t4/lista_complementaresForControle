@@ -11,11 +11,42 @@
     */
 
     //ENTRADA
+    let sim = 0;
+    let nao = 0;
+    let genRes = [];
+    let contadorMulher = 0;
+    let contadorHomemNao = 0;
+    let contadorHomemSim = 0;
 
+    for (let c = 1; c <= 10; c++) {
+        const genero = prompt(`Me diga o gênero da pessoa ${c}. M - Masculino; F - Feminino`).toUpperCase();
+        const res = prompt(`Me diga a resposta da pessoa ${c}. S - Sim; N - Não`).toUpperCase();
 
-    //PROCESSAMENTO
-    //ENTRADA
+        genRes.push({
+            genero: genero,
+            resposta: res
+        });
 
+        if (res === "S") {
+            sim++;
+        } else {
+            nao++;
+        }
+    }
+
+    for (const varredor of genRes) {
+        if (varredor.genero === "F" && varredor.resposta === "S") {
+            contadorMulher++;
+        }
+
+        if (varredor.genero === "M" && varredor.resposta === "N") {
+            contadorHomemNao++;
+        } else if (varredor.genero === "M" && varredor.resposta === "S") {
+            contadorHomemSim++;
+        }
+    }
+
+    document.write(`<p>Número de pessoas que respondeu sim: ${sim}; Número de pessoas que respondeu não: ${nao}; Número de mulheres que respondeu sim: ${contadorMulher}; Percentil de homens que disseram não: ${((contadorHomemNao / (contadorHomemSim + contadorHomemNao))* 100).toFixed(2).replace("." , ",")}%`);
     
     //PROCESSAMENTO
     
