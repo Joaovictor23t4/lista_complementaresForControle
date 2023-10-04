@@ -4,10 +4,16 @@
     /*
     Desenvolva um programa que encontre o quinto número maior que 1000, cuja divisão por 11 tenha resto 5.
     */
-
     //ENTRADA
+    let div11 = [];
+    for (let c = 1001; div11.length < 5; c++) {
+        if (c % 11 === 5) {
+            div11.push(c);
+        }
+    }
+
+    document.write(`O 5° número maior que 1000 que dividido por 11 tenha resto 5 é: ${div11[4]}`);
     //PROCESSAMENTO
-    
     
     //SAÍDA
     

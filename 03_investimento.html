@@ -9,20 +9,23 @@
 
     //ENTRADA
     let investimento = 0;
-    let lucro = 0;
+    let lucroMensal = 0;
+    let lucroTotal = 0;
     //PROCESSAMENTO
     for (let c = 1; c <= 96; c++) {
         investimento += 100;
-        lucro += 100 * 1.8;
+        lucroMensal = investimento * 0.018;
+        lucroTotal = lucroTotal + lucroMensal;
+        investimento += lucroMensal;
 
         if (c === 24) {
-            document.write(`<p>Investido: R$${investimento.toFixed(2).replace("." , ",")}; Lucrado: R$${lucro.toFixed(2).replace("." , ",")}</p>`);
+            document.write(`<p>Investido: R$${investimento.toFixed(2).replace("." , ",")}; Lucrado: R$${lucroTotal.toFixed(2).replace("." , ",")}</p>`);
         } else if (c === 48) {
-            document.write(`<p>Investido: R$${investimento.toFixed(2).replace("." , ",")}; Lucrado: R$${lucro.toFixed(2).replace("." , ",")}</p>`);
+            document.write(`<p>Investido: R$${investimento.toFixed(2).replace("." , ",")}; Lucrado: R$${lucroTotal.toFixed(2).replace("." , ",")}</p>`);
         }
     }
 
-    document.write(`<p>Investido: R$${investimento.toFixed(2).replace("." , ",")}; Lucrado: R$${lucro.toFixed(2).replace("." , ",")}</p>`);
+    document.write(`<p>Investido: R$${investimento.toFixed(2).replace("." , ",")}; Lucrado: R$${lucroTotal.toFixed(2).replace("." , ",")}</p>`);
     
     //SAÍDA
     

@@ -14,7 +14,6 @@
     let sim = 0;
     let nao = 0;
     let genRes = [];
-    let contadorMulher = 0;
     let contadorHomemNao = 0;
     let contadorHomemSim = 0;
 
@@ -34,18 +33,24 @@
         }
     }
 
-    for (const varredor of genRes) {
-        if (varredor.genero === "F" && varredor.resposta === "S") {
-            contadorMulher++;
+    contadorMulher = genRes.reduce((soma, valor) => {
+        if (valor.genero === "F" && valor.resposta === "S") {
+            return soma + 1;
         }
+    }, 0);
 
-        if (varredor.genero === "M" && varredor.resposta === "N") {
-            contadorHomemNao++;
-        } else if (varredor.genero === "M" && varredor.resposta === "S") {
-            contadorHomemSim++;
+    contadorHomemNao = genRes.reduce((soma, valor) => {
+        if (valor.genero === "M" && valor.resposta === "N") {
+            return soma + 1;
         }
-    }
+    }, 0);
 
+    contadorHomemSim = genRes.reduce((soma, valor) => {
+        if (valor.genero === "M" && valor.resposta === "S") {
+            return soma + 1;
+        }
+    }, 0);
+    
     document.write(`<p>Número de pessoas que respondeu sim: ${sim}; Número de pessoas que respondeu não: ${nao}; Número de mulheres que respondeu sim: ${contadorMulher}; Percentil de homens que disseram não: ${((contadorHomemNao / (contadorHomemSim + contadorHomemNao))* 100).toFixed(2).replace("." , ",")}%`);
     
     //PROCESSAMENTO
