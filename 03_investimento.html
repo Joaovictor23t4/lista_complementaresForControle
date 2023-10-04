@@ -8,9 +8,21 @@
     */
 
     //ENTRADA
-    let investimento = 100;
+    let investimento = 0;
+    let lucro = 0;
     //PROCESSAMENTO
-    
+    for (let c = 1; c <= 96; c++) {
+        investimento += 100;
+        lucro += 100 * 1.8;
+
+        if (c === 24) {
+            document.write(`<p>Investido: R$${investimento.toFixed(2).replace("." , ",")}; Lucrado: R$${lucro.toFixed(2).replace("." , ",")}</p>`);
+        } else if (c === 48) {
+            document.write(`<p>Investido: R$${investimento.toFixed(2).replace("." , ",")}; Lucrado: R$${lucro.toFixed(2).replace("." , ",")}</p>`);
+        }
+    }
+
+    document.write(`<p>Investido: R$${investimento.toFixed(2).replace("." , ",")}; Lucrado: R$${lucro.toFixed(2).replace("." , ",")}</p>`);
     
     //SAÍDA
     

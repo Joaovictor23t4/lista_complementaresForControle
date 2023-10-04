@@ -8,8 +8,23 @@
     */
 
     //ENTRADA
+    const qtdPrimos = Number(prompt(`Quantos números primos você quer descobrir?`));
+    let primos = [];
+    for (let c = 2; primos.length < qtdPrimos; c++) {
+        let ePrimo = true;
 
-    
+        for (let i = 2; i <= c; i++) {
+            if (c % i === 0 && i < c) {
+                ePrimo = false;
+            }
+        }
+
+        if (ePrimo === true) {
+            primos.push(c);
+        }
+    }
+
+    document.write(`Lista de primos: ${primos}`);
     //PROCESSAMENTO
     
     

@@ -8,21 +8,15 @@
 
     //ENTRADA
     let quantiaBanco = 10000;
-    const retiradaMensal = 300;
-    const taxaRendimento = 0.03;
     let meses = 0;
 
-    for (let valorAtual = quantiaBanco; valorAtual > 0; meses++) {
-        const rendimentoMensal = valorAtual * taxaRendimento;
+    for (let valorAtual = quantiaBanco; valorAtual >= 0; meses++) {
+        valorAtual -= 300;
 
-        valorAtual += rendimentoMensal - retiradaMensal;
-
-        if (valorAtual < 0) {
-            valorAtual = 0;
-        }
+        valorAtual += valorAtual * 0.03 ;
     }
 
-    document.write(`A pessoa terá gasto todo o seu valor investido em ${c} meses`);
+    document.write(`A pessoa terá gasto todo o seu valor investido em ${meses} meses`);
 
     //PROCESSAMENTO
     
