@@ -9,8 +9,18 @@
     */
 
     //ENTRADA
+    const valorInvestir = Number(prompt(`Qual será o valor que deseja investir`));
+    let poupanca = valorInvestir;
+    let poupancaPlus = valorInvestir;
+    let rendaFixa = valorInvestir;
 
-    
+    for (let c = 1; c <= 36; c++) {
+        poupanca *= 1.015;
+        poupancaPlus *= 1.02;
+        rendaFixa *= 1.04;
+    }
+
+    document.write(`Usando poupança você terá um valor final de: R$${poupanca.toFixed(2).replace("." , ",")}; Usando poupança plus teremos: R$${poupancaPlus.toFixed(2).replace("." , ",")}; Usando Renda Fixa teremos: R$${rendaFixa.toFixed(2).replace("." , ",")}`);
     //PROCESSAMENTO
     
     
