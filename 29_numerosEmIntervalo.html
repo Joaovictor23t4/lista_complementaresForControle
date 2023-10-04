@@ -15,8 +15,12 @@
     let numEntre = 0;
 
     for (const varredor of num) {
-        if ()
+        if (varredor >= 100 && varredor <= 200) {
+            numEntre++;
+        }
     }
+
+    document.write(`A porcentagem de números entre 100 e 200 é de: ${(numEntre * 100) / num.length}% A quantidade de números nesse intervalo é de: ${numEntre}`);
     //PROCESSAMENTO
     
     

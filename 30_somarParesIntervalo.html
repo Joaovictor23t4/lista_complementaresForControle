@@ -11,8 +11,19 @@
     */
 
     //ENTRADA
+    const inferior = Number(prompt(`Informe o limite inferior:`));
+    const superior = Number(prompt(`Informe o limite superior:`));
+    let numerosPares = [];
+    let somaPares = 0;
 
-    
+    for (let c = inferior; c < superior; c++) {
+        if (c % 2 === 0) {
+            numerosPares.push(c);
+            somaPares += c;
+        }
+    }
+
+    document.write(`Números pares: ${numerosPares.join(", ")}; Soma desses números pares: ${somaPares}`);
     //PROCESSAMENTO
     
     
